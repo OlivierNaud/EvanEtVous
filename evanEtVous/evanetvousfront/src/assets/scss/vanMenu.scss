@@ -1,0 +1,283 @@
+@import "../scss/abstract/mixin.scss";
+
+.sectionVanMenu {
+    overflow-y: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+// .overflowX {
+//     overflow-x: hidden;
+// }
+
+.containerVanMenu {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+
+    @include computer {
+        width: 100%;
+        display: flex;
+    }
+
+    .imgTitleVan {
+        background-color: white;
+        text-align: center;
+        padding: 30px 0 10px 0;
+        position: relative;
+        top: 20px;
+
+        @include computer {
+            display: none;
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    .vanTitreHoraire {
+        display: none;
+
+        @include computer {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            width: 30%;
+        }
+
+        .imgTitreVanComputer {
+            height: 50%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divHoraireComputer {
+            height: 50%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .containerPlatMenu {
+        width: 100%;
+        display: flex;
+        flex-flow: wrap;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+
+        @include computer {
+            height: 0;
+            margin-top: 0;
+            align-items: unset;
+        }
+
+        .boxMenu {
+            width: 35%;
+            height: 100px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            background-color: white;
+
+            @include computer {
+                width: 20%;
+                height: 250px;
+                margin: 150px 10px 0 10px;
+            }
+
+            h4 {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            button {
+                border: 1px solid #cf9b41;
+                background-color: transparent;
+                width: 80%;
+                bottom: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .buttonDescriptionVan {
+        width: 100%;
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        justify-content: center;
+
+        @include computer {
+            position: absolute;
+            top: 92%;
+            margin: 0;
+        }
+
+        @include computer {
+            .divButtonCommander {
+                position: absolute;
+                right: 10%;
+
+                button {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        button {
+            color: #cf9b41;
+            background-color: transparent;
+            border: solid 1px #cf9b41;
+            padding: 4px 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.containercaracteristiqueVan {
+    background-color: #393939;
+    position: absolute;
+    right: -100vw;
+    z-index: 1001;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    transition: 0.2s;
+
+    @include computer {
+        right: 0;
+        top: -100vh;
+    }
+
+    .titleQuestion {
+        width: 100%;
+        margin-top: 20px;
+
+        @include computer {
+            margin-top: 0;
+            display: flex;
+            height: 100%;
+        }
+
+        .imgTitleVanCaracteristique {
+            background-color: white;
+            text-align: center;
+            padding: 30px 0 10px 0;
+            position: relative;
+            width: 100%;
+
+            @include computer {
+                background-color: white;
+                text-align: center;
+                position: relative;
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                padding: 0;
+            }
+
+            h2,
+            p {
+                margin: 0;
+            }
+        }
+
+        .containerQuestion {
+            width: 80%;
+            position: relative;
+            margin: auto;
+
+            @include computer {
+                width: 60%;
+                margin: 0;
+                flex-flow: column;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .questionReponse {
+                margin: 10px 0;
+
+                @include computer {
+                    width: 80%;
+                    margin: 20px 0;
+                }
+
+                .question {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                    color: #cf9b41;
+
+                    @include computer {
+                        font-size: 30px;
+                        text-align: left;
+                    }
+                }
+
+                .reponse {
+                    font-size: 10px;
+                    color: white;
+
+                    @include computer {
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .buttonBackDescriptionVan {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 20px;
+        margin: 10px;
+
+        @include computer {
+            position: absolute;
+            top: 92%;
+            margin: 0;
+        }
+
+        button {
+            color: #cf9b41;
+            background-color: transparent;
+            border: solid 1px #cf9b41;
+            padding: 4px 15px;
+        }
+    }
+}
+
+//POPUP
+.popup {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    background-color: #0000004a;
+    z-index: 1000;
+    transition: 1s;
+    left: 0;
+
+    p {
+        color: white;
+    }
+}

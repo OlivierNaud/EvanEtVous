@@ -1,0 +1,59 @@
+@import "../../scss/abstract/mixin.scss";
+
+#headerVanScroll {
+    display: none;
+
+    @include computer {
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: -38px;
+        z-index: 11;
+        transition: 0.2s;
+        transition-delay: 0.8s;
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                font-size: 20px;
+                padding: 5px 25px;
+                border-left: 1px solid #cf9b41;
+                border-bottom: 1px solid #cf9b41;
+                background-color: #393939;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+
+            li:hover {
+                background-color: #cf9b41;
+                transition: 0.2s;
+            }
+
+            li:last-child {
+                border-right: 1px solid #cf9b41;
+            }
+        }
+    }
+
+    .loginCommandeScroll {
+        position: absolute;
+        display: flex;
+        right: 100px;
+        align-items: center;
+        height: 100%;
+
+        div {
+            margin: 25px 0;
+            font-size: 22px;
+            color: white;
+        }
+    }
+}

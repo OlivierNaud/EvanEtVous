@@ -1,0 +1,76 @@
+@import "../../scss/abstract/mixin.scss";
+
+.containerLieux {
+    border: 1px solid #cf9b41;
+    text-align: center;
+    width: 50%;
+    position: relative;
+    top: 20px;
+    margin-top: 10px;
+    padding-bottom: 2%;
+
+    @include computer {
+        top: 0;
+        margin: 0;
+        width: 70%;
+    }
+
+    h4 {
+        width: 100%;
+        margin: 0;
+        color: #cf9b41;
+        font-size: 14px;
+
+        @include computer {
+            font-size: 22px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 25%;
+            top: 11%;
+            width: 50%;
+            background: #cf9b41;
+            height: 1px;
+        }
+    }
+
+    .containerAdresse {
+        width: 100%;
+        margin-top: 5px;
+
+        @include computer {
+            margin-top: 15px;
+        }
+
+        .jourAdresse {
+            margin: 2px 0;
+            color: #cf9b41;
+
+            .jour {
+                font-size: 12px;
+
+                @include computer {
+                    font-size: 16px;
+                }
+            }
+
+            .adresse {
+                font-size: 10px;
+                width: 90%;
+                margin: auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                @include computer {
+                    font-size: 14px;
+                }
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import "../scss/abstract/mixin.scss";
+
+html {
+    scroll-behavior: smooth;
+
+    @include computer {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+body {
+    background-color: #393939;
+    position: relative;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+
+    @include computer {
+        display: flex;
+        width: auto;
+    }
+}
+
+.box {
+    height: 92vh;
+    width: 100vw;
+    position: relative;
+
+    @include computer {
+        height: 100vh;
+    }
+}
+
+body::-webkit-scrollbar {
+    height: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+}

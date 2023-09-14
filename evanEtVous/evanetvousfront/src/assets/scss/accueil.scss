@@ -1,0 +1,216 @@
+@import "../scss/abstract/mixin.scss";
+
+#accueil {
+    padding-top: 8vh;
+    display: flex;
+
+    @include computer {
+        padding-top: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+.contenuInfo {
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    @include computer {
+        display: none;
+    }
+
+    .title {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: #cf9b41;
+            margin: 0;
+            font-size: 36px;
+        }
+    }
+
+    .carroussel {
+        width: 100%;
+        height: 25%;
+        background-color: #cf9b41;
+    }
+
+    .presentationEntreprise {
+        width: 100%;
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            color: #cf9b41;
+            font-size: 10px;
+            padding: 2%;
+            margin: 0;
+        }
+
+        div {
+            width: 80%;
+            height: 180px;
+            margin-top: 30px;
+            background-color: white;
+        }
+    }
+}
+
+.containerRoute {
+    width: 20%;
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    z-index: 1000;
+
+    @include computer {
+        display: none;
+    }
+    .route {
+        width: 32px;
+        height: 100%;
+        background-color: white;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        position: fixed;
+    }
+}
+
+.containerRouteComputer {
+    display: none;
+
+    @include computer {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        top: 50%;
+    }
+
+    .routeComputer {
+        @include computer {
+            width: 100%;
+            height: 32px;
+            background-color: white;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            right: 0;
+        }
+    }
+}
+
+.navAccueilComputer {
+    display: none;
+
+    @include computer {
+        position: absolute;
+        width: 100%;
+        top: 42%;
+        display: block;
+
+        ul {
+            padding: 0;
+            display: flex;
+            justify-content: space-evenly;
+            list-style-type: none;
+            align-items: center;
+            margin: 0;
+
+            li {
+                border: 1px solid #cf9b41;
+
+                :hover {
+                    background-color: #cf9b41;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #cf9b41;
+                    font-size: 30px;
+                    font-weight: bold;
+                    padding: 0px 15px;
+                }
+            }
+
+            .liHoverA:hover > a {
+                color: #393939;
+            }
+
+            .liHoverA > a,
+            li:hover {
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
+.commanderComputer {
+    display: none;
+
+    @include computer {
+        display: flex;
+        position: absolute;
+        top: 54%;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        a {
+            text-decoration: none;
+            color: #cf9b41;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 0px 15px;
+            border: 1px solid #cf9b41;
+        }
+        :hover {
+            background-color: #cf9b41;
+            color: #393939;
+            transition: 0.2s;
+        }
+    }
+}
+
+.presentationEntrepriseComputer {
+    display: none;
+
+    @include computer {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        color: #cf9b41;
+        width: 100%;
+        flex-flow: row-reverse;
+
+        p {
+            font-size: 16px;
+            width: 30%;
+            margin-left: 10%;
+        }
+
+        div {
+            background-color: white;
+            height: 300px;
+            width: 500px;
+        }
+    }
+}

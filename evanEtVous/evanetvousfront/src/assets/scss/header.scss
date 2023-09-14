@@ -1,0 +1,215 @@
+@import "../scss/abstract/mixin.scss";
+
+header {
+    width: 100%;
+    height: 8vh;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    z-index: 1002;
+
+    @include computer {
+        background-color: transparent;
+        width: 100%;
+        position: absolute;
+        top: 30px;
+        justify-content: space-between;
+    }
+}
+
+.menuBurgerPosition {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include computer {
+        display: none;
+    }
+
+    .menuBurger {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 30;
+        transition: 0.4s;
+
+        .spanMenuBurger,
+        .spanMenuBurger::after,
+        .spanMenuBurger::before {
+            content: "";
+            background-color: #cf9b41;
+            width: 37px;
+            height: 2px;
+            position: absolute;
+            transition: 0.4s;
+        }
+
+        .transformSpan {
+            transform: rotateZ(45deg);
+            transition: 0.4s;
+        }
+        .transformSpan::after {
+            display: none;
+        }
+
+        .transformSpan::before {
+            transform: rotateZ(90deg);
+            top: 0 !important;
+            transition: 0.4s;
+        }
+
+        .spanMenuBurger::after {
+            top: -10px;
+        }
+
+        .spanMenuBurger::before {
+            top: 10px;
+        }
+    }
+
+    .navMenuBurger {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        z-index: 29;
+        background-color: #393939;
+        transition: 0.2s;
+
+        ul {
+            margin: 0;
+            padding-top: 90px;
+            padding-left: 0;
+
+            li {
+                list-style-type: none;
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 1px solid black;
+
+                a {
+                    color: #cf9b41;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.logoHeader {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+
+    @include computer {
+        display: none;
+    }
+
+    img {
+        position: absolute;
+        top: -25px;
+    }
+}
+
+.shopAndConnection {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include computer {
+        display: none;
+    }
+
+    .connection,
+    .shop {
+        width: 45px;
+        height: 45px;
+        background-color: #cf9b41;
+        border-radius: 10px;
+        margin: 0 5px;
+    }
+}
+
+// ADD ELEMENT FOR COMPUTER
+
+.titleLogoHeader {
+    display: none;
+
+    @include computer {
+        display: inherit;
+        position: absolute;
+        left: 50%;
+        display: block;
+        transform: translate(-50%, 0%);
+
+        h1 {
+            color: #cf9b41;
+            font-size: 50px;
+            margin: 0;
+        }
+
+        div {
+            width: 50%;
+            margin: auto;
+        }
+    }
+}
+
+.login {
+    display: none;
+
+    @include computer {
+        position: absolute;
+        right: 0;
+        width: 30%;
+        font-size: 22px;
+        color: #cf9b41;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+
+        a {
+            text-decoration: none;
+            color: #cf9b41;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            margin-left: 20px;
+
+            svg {
+                font-size: 25px;
+                color: white;
+                animation: 2s infinite light;
+            }
+
+            @keyframes light {
+                from {
+                    filter: brightness(0.5);
+                }
+                50% {
+                    filter: brightness(1);
+                }
+                to {
+                    filter: brightness(0.5);
+                }
+            }
+        }
+    }
+}
